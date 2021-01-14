@@ -25,7 +25,7 @@ SECRET_KEY = 'b!w&r($*(xuuk4ts56adj#g3em*nj-a1gkeuqtwe8@*$fo!6s)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'screens',
-    'room_schedules',
     'django_cron',
     'recurrence',
     'admin_ordering',
