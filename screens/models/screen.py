@@ -13,7 +13,7 @@ class Screen(models.Model):
                                             default=None,
                                             on_delete=models.SET_NULL,
                                             blank=True,
-                                            help_text="Optional (you probably want an event schedule here)")
+                                            help_text="Optional. Plays randomly between other content")
     ip = models.GenericIPAddressField()
 
     def __str__(self):

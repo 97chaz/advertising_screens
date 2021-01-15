@@ -10,7 +10,7 @@ class Playlist(models.Model):
     name = models.TextField()
     description = models.TextField()
     plays_everything = models.BooleanField(default=False)
-    interspersed_source = models.ForeignKey(Source, null=True, default=None, on_delete=models.SET_NULL, blank=True)
+    interspersed_source = models.ForeignKey(Source, null=True, default=None, on_delete=models.SET_NULL, blank=True, help_text="Optional. Plays randomly between other content")
     last_updated = models.DateTimeField(auto_now=True)
 
     def get_sources(self):
