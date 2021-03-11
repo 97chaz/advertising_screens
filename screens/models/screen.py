@@ -16,7 +16,7 @@ class Screen(models.Model):
                                             blank=True,
                                             help_text="Optional. Plays randomly between other content")
     ip = models.GenericIPAddressField()
-    last_seen = models.DateTimeField()
+    last_seen = models.DateTimeField(auto_now_add=True, blank=True)
     
     def online(self):
         return self.last_seen and self.last_seen >= datetime.now()-timedelta(minutes=1)
