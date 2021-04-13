@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="1200"/>
+    <meta http-equiv="refresh" content="3600"/>
     <meta charset="UTF-8">
     <title>Screens</title>
     <script src="{% static 'admin/js/vendor/jquery/jquery.min.js' %} " type="text/javascript" charset="utf-8"></script>
@@ -77,7 +77,7 @@
 
     window.onload = function () {
         screentest();
-        window.setInterval(check_for_changes, 1000 * 60);
+        window.setInterval(check_for_changes, 1000);
         for(let j = 0; j < x.length; j++) {
           if (django.jQuery(x[j]).hasClass('video') === true) {
             x[j].currentTime = 0;
