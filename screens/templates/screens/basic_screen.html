@@ -77,7 +77,7 @@
 
     window.onload = function () {
         screentest();
-        window.setInterval(check_for_changes, 1000);
+        window.setInterval(check_for_changes, 1000 * 60);
         for(let j = 0; j < x.length; j++) {
           if (django.jQuery(x[j]).hasClass('video') === true) {
             x[j].currentTime = 0;
