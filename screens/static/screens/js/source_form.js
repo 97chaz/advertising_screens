@@ -15,7 +15,11 @@ django.jQuery(function($) {
   $("#id_type").change(function(event) {
     if (event.target.value == "FRM"){
       frm_selected()
-    } else {
+    } 
+    else if (event.target.value == "YTV"){
+      frm_selected()
+    }
+    else {
       frm_deselected()
     }
   });

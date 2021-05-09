@@ -14,4 +14,10 @@
             data-duration="{{ source.duration }}"
             {% endif %}
     ></iframe>
+{% elif source.source.type == "YTV" %}
+    <iframe src="{{ source.source.url }}?controls=0&enablejsapi=1" class="advert tube" allow="autoplay"
+            {% if source.duration %}
+            data-duration="{{ source.duration }}"
+            {% endif %}
+    ></iframe>
 {% endif %}

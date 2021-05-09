@@ -15,10 +15,12 @@ class Source(models.Model):
     IMAGE = 'IMG'
     VIDEO = 'VID'
     IFRAME = 'FRM'
+    YOUTUBEVIDEO = 'YTV'
     types = (
         (IMAGE, 'Image'),
         (VIDEO, 'Video'),
         (IFRAME, 'Website'),
+        (YOUTUBEVIDEO, 'YouTube Video')
     )
     type = models.CharField(max_length=3, choices=types)
     name = models.TextField()
