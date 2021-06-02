@@ -125,4 +125,5 @@ dmypy.json
 
 .idea/*
 media/*
+static/*
 advertising/settings.py

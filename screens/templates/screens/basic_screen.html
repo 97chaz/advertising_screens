@@ -4,7 +4,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    <meta http-equiv="refresh" content="3600" /> -->
+    <meta http-equiv="refresh" content="3600" />
     <meta charset="UTF-8">
     <title>Screens</title>
     <script src="{% static 'admin/js/vendor/jquery/jquery.min.js' %} " type="text/javascript" charset="utf-8"></script>
@@ -69,6 +69,20 @@
     {% endif %}
     {% endfor %}
     <script>
+
+  /*  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    
+    navigator.serviceWorker.register('/media/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+} */
+
         //Marketing Screen Slideshow
         // Original JS CSS and HTML Made by Thew & Charlie 2018
         var displaytime = 10000;
@@ -104,9 +118,15 @@
             if (django.jQuery(x[i]).hasClass('video') === true) {
                 if (x[i].readyState >= 0) {
                     x[i].style.opacity = 1;
+                    //x[i].removeAttribute("src");
+                    //x[i].load();
                     x[i].play();
                     x[i].onended = function () {
                         x[i].style.opacity = 0;
+                        var tmp_src = x[i].src;
+                        x[i].src=("");
+                        //x[i].load();
+                        x[i].src = tmp_src;
                         if (x.length == 1) {
                             x[i].currentTime = 0;
                         } else {

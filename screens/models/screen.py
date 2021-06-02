@@ -19,7 +19,7 @@ class Screen(models.Model):
     last_seen = models.DateTimeField(auto_now_add=True, blank=True)
     
     def online(self):
-        return self.last_seen and self.last_seen >= datetime.now()-timedelta(minutes=1)
+        return self.last_seen and self.last_seen >= datetime.now()-timedelta(minutes=2)
     online.boolean = True
         
 

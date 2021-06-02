@@ -5,8 +5,8 @@
          {% endif %}
     >
 {% elif source.source.type == "VID" %}
-    <video class="advert video" preload="none">
-        <source src="{{ source.source.file.url }}">
+    <video class="advert video" src="{{ source.source.file.url }}" preload="none">
+       <!-- <source src="{{ source.source.file.url }}"> -->
     </video>
 {% elif source.source.type == "FRM" %}
     <iframe src="{{ source.source.url }}" class="advert image"
@@ -16,8 +16,5 @@
     ></iframe>
 {% elif source.source.type == "YTV" %}
     <iframe src="{{ source.source.url }}?controls=0&enablejsapi=1&iv_load_policy=3" class="advert tube" allow="autoplay"
-            {% if source.duration %}
-            data-duration="{{ source.duration }}"
-            {% endif %}
     ></iframe>
 {% endif %}
