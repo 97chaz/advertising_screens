@@ -32,5 +32,4 @@ urlpatterns = [
     path('api/playlist/<int:playlist_id>', screenviews.view_playlist_json, name="screens/playlist_view_json"),
     path('meta', screenviews.get_meta, name="screen-meta-view"),
     path('api/meta', screenviews.get_meta, name="screen-meta-view"),
-    path('event_schedules/', include(room_schedules_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
