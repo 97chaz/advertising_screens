@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from datetime import datetime, timedelta
+from django.db.models import Q
 
 from screens.models import Source
 from screens.models.schedule import Schedule
