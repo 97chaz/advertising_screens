@@ -4,12 +4,21 @@ django.jQuery(function($) {
     console.log("frm");
     $("#id_file").prop('disabled', true);
     $("#id_url").prop('disabled', false);
+    $("#id_ytid").prop('disabled', true);
   }
 
-  function frm_deselected(){
-    console.log("not frm");
+  function ytv_selected(){
+    console.log("ytv");
+    $("#id_file").prop('disabled', true);
+    $("#id_url").prop('disabled', true);
+    $("#id_ytid").prop('disabled', false);
+  }
+
+  function img_vid_selected(){
+    console.log("img_vid");
     $("#id_file").prop('disabled', false);
     $("#id_url").prop('disabled', true);
+    $("#id_ytid").prop('disabled', true);
   }
 
   $("#id_type").change(function(event) {
@@ -17,10 +26,10 @@ django.jQuery(function($) {
       frm_selected()
     } 
     else if (event.target.value == "YTV"){
-      frm_selected()
+      ytv_selected()
     }
     else {
-      frm_deselected()
+      img_vid_selected()
     }
   });
 });

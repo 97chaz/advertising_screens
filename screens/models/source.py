@@ -31,7 +31,8 @@ class Source(models.Model):
                             null=True,
                             blank=True,
                             help_text="")
-    url = models.URLField(blank=True, verbose_name="Website Address", help_text="only required if website type")
+    url = models.URLField(blank=True, verbose_name="Website Address", help_text="Only required if website type")
+    ytid = models.CharField(blank=True, max_length=20, verbose_name="YouTube Video ID", help_text="Only the YouTube Video ID is required. Only required if YouTube Type")
     exclude_from_play_all = models.BooleanField(default=False)
     expires_at = models.DateTimeField(blank=True, null=True, default=None)
     valid_from = models.DateTimeField(blank=True, null=True, default=None)
